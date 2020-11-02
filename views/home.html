@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style type="text/css">
+	a{margin-left: 20px; text-decoration: none;}
+	a:hover{text-decoration: underline;}
+    </style>
+  </head>
+  <body>
+  <h1>Your name:   <%= user %></h1>
+    <p>Welcome to your home ~</p>
+    <ul>
+      <% for(var i=0; i<todolists.length; i++){  %>
+          <li><%=todolist[i].title %>- <%=todolists[i].context %>- <%=todolist[i].time %></li>
+      <%}%>
+    </ul>
+    <p><a href="/todolist/add">Add</a><a href="/logout">Logout </a>
+    </p>
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  	<script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  	<script type="text/javascript">
+  	$(function(){
+  		$("#todolist").click(function(){
+  			location.href = 'todolist';
+  		});
+  	});
+  </script>
+  </body>
+</html>
